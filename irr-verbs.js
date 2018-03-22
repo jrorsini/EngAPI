@@ -8,18 +8,24 @@ const list = string.split('|').map(e =>
 		.map(e => e.split(/,\s/))
 );
 
+const isIrr = word => {
+	word = word.replace(/[,]/gi, '').trim();
+	res = false;
+	list.map(e => {
+		e.map(e => {
+			e.map(e => {
+				if (e === word) res = true;
+			});
+		});
+	});
+	return res;
+};
+
 const find = sentence => {
 	const arr = sentence.split(/\s/g);
 	let found = [];
 	arr.map(word => {
-		word = word.replace(/[,]/gi, '').trim();
-		list.map(e => {
-			e.map(e => {
-				e.map(e => {
-					if (e === word) found.push(word);
-				});
-			});
-		});
+		if (isIrr(word)) found.push(word);
 	});
 
 	return found;
