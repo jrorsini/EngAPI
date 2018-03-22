@@ -5,7 +5,9 @@ const app = express();
 const fs = require('fs');
 const irr = require('./irr-verbs');
 
-console.log(irr.list);
+console.log(irr.find('hello, today I ate some pasta, and ran off.'));
+console.log(irr.find('He wound up being arrested.'));
+console.log(irr.find("I didn't,"));
 
 app.use(cors());
 app.get('/', (req, res) => res.send('Hello World!'));
