@@ -9,13 +9,16 @@ app.get('/', (req, res) => res.send('Hello World!'));
 app.post('/upload', (req, res) => {
 	const form = new formidable.IncomingForm();
 
+	form.on('progress', function(bytesReceived, bytesExpected) {
+		console.log(Math.round(bytesReceived / bytesExpected * 100) + '%');
+	});
+
 	form.parse(req, (err, fields, files) => {
 		const oldpath = files.filetoupload.path;
 		const newpath = 'videos/' + files.filetoupload.name;
 		fs.rename(oldpath, newpath, function(err) {
 			if (err) throw err;
-			res.write('File uploaded and moved!');
-			res.end('File uploaded');
+			res.send('File uploaded');
 		});
 	});
 });
