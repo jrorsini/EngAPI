@@ -5,7 +5,7 @@ const app = express();
 const fs = require('fs');
 const irr = require('./irr-verbs');
 
-console.log(irr);
+console.log(irr.list);
 
 app.use(cors());
 app.get('/', (req, res) => res.send('Hello World!'));
