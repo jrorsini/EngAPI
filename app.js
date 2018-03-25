@@ -9,8 +9,6 @@ const irr = require('./irr-verbs');
 // console.log(irr.find('He wound up being arrested.'));
 // console.log(irr.find("I didn't,"));
 
-
-
 app.use(cors());
 app.get('/', (req, res) => res.send('Hello World!'));
 app.post('/upload', (req, res) => {
