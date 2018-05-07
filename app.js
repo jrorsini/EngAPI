@@ -15,7 +15,9 @@ app.get('/', (req, res) => res.send('Hello World!'))
 
 app.get('/search/:word', (req, res) => {
 	request(
-		`https://glosbe.com/gapi/translate?from=eng&dest=fra&format=json&phrase=test`,
+		`https://glosbe.com/gapi/translate?from=eng&dest=fra&format=json&phrase=${
+			req.params.word
+		}`,
 		function(error, response, body) {
 			if (!error && response.statusCode === 200) {
 				res.send(body)
