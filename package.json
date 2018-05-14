@@ -1,7 +1,7 @@
 {
   "name": "apiTest",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.4",
@@ -10,7 +10,9 @@
     "mocha": "^5.0.4",
     "request": "^2.85.0"
   },
-  "engines" : { "node" : ">=0.10.3 <0.12" },
+  "engines": {
+    "node": "8.10.0"
+  },
   "scripts": {
     "start": "node app.js",
     "build": "node app.js"
