@@ -7,7 +7,7 @@ const request = require('request');
 const irr = require('./irr-verbs');
 
 // app.use(cors());
-// app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => res.send('Hello World!'));
 
 // app.get('/search/:word', (req, res) => {
 // 	request(
